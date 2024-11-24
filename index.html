@@ -11,12 +11,12 @@
   <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="description"
-        content="Cross-Modality Safety Alignment">
-  <meta name="keywords" content="Cross-Modality, Safety, Alignment, Large Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence">
+        content="VLSBench">
+  <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> SIUO: Cross-Modality Safety Alignment</title>
+  <title>VLSBench: Unveiling Information Leakage in Multimodal Safety</title>
 
-  <link rel="icon" href="./static/images/siuo_icon.png">
+  <!-- <link rel="icon" href="./static/images/siuo_icon.png"> -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -41,42 +41,6 @@
 </head>
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://tiger-ai-lab.github.io/MAmmoTH/">
-            <b>MAmmoTH</b> <p style="font-size:18px; display: inline; margin-left: 5px;">🔥</p>
-          </a>
-          <a class="navbar-item" href="https://osu-nlp-group.github.io/TableLlama/">
-            TableLlama 
-            <a class="navbar-item" href="https://osu-nlp-group.github.io/MagicBrush/">
-              MagicBrush
-            </a>
-            <a class="navbar-item" href="https://osu-nlp-group.github.io/Mind2Web/">
-              Mind2Web
-            </a>
-          </a>
-          
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav> -->
-
 
 <section class="hero">
   <div class="hero-body">
@@ -84,66 +48,45 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title is-bold">
-            <img src="static/images/siuo_icon.png" style="width:1em;vertical-align: middle" alt="Logo"/> 
-            <span class="mmmu" style="vertical-align: middle">SIUO</span>
+            VLSBench: Unveiling Information Leakage in Multimodal Safety
+            <!-- <img src="static/images/vls.png" style="width:1em;vertical-align: middle" alt="Logo"/> 
+            <span class="mmmu" style="vertical-align">VLSBench</span> -->
             </h1>
-          <h2 class="subtitle is-3 publication-subtitle">
-            Cross-Modality Safety Alignment
-            <!-- <br> -->
-            <!-- and Reasoning Benchmark for Expert AGI -->
-          </h2>
+          <!-- <h2 class="subtitle is-3 publication-subtitle">
+            VLSBench: Unveiling Information Leakage in Multimodal Safety
+          </h2> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://sinwang20.github.io/" style="text-decoration: none; color: inherit;">Siyin Wang<sup style="color:#ffac33;">1</sup></a>
+              <a href="https://sinwang20.github.io/" style="text-decoration: none; color: inherit;">Xuhao Hu<sup style="color:#ffac33;">1,2</sup></a>
               ,
             </span>
             <span class="author-block">
-              <a href="https://yesianrohn.github.io/" style="text-decoration: none; color: inherit;">Xingsong Ye<sup style="color:#ffac33;">1</sup></a>
+              <a href="https://yesianrohn.github.io/" style="text-decoration: none; color: inherit;">Dongrui Liu<sup style="color:#ffac33;">1</sup></a>
               ,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=nu_iPXAAAAAJ&hl=en" style="text-decoration: none; color: inherit;">Qinyuan Cheng<sup style="color:#ffac33;">1</sup></a>
+              <a href="https://scholar.google.com/citations?user=nu_iPXAAAAAJ&hl=en" style="text-decoration: none; color: inherit;">Hao Li<sup style="color:#ffac33;">1,3</sup></a>
               ,
             </span>
-            <span class="author-block">Junwen Duan<sup style="color:#ffac33;">1</sup>,</span><br>
-            <span class="author-block">Shimin Li<sup style="color:#ffac33;">1</sup>,</span>
-            <!-- <span class="author-block">Jinlan Fu<sup style="color:#ed4b82;">2</sup>,</span>
-            <span class="author-block">Xipeng Qiu<sup style="color:#ffac33;">1</sup>,</span>
-            <span class="author-block">Xuanjing Huang<sup style="color:#ffac33;">1/sup>,</span> -->
-            <!-- <span class="author-block">Weiming Ren<sup style="color:#ffac33;">2</sup>,</span>
-            <span class="author-block">Yuxuan Sun<sup style="color:#007bff;">4</sup>,</span>
-            <span class="author-block">Cong Wei<sup style="color:#ffac33;">2</sup>,</span>
-            <span class="author-block">Botao Yu<sup style="color:#ed4b82;">3</sup>,</span>
-            <span class="author-block">Ruibin Yuan<sup style="color:#ffac33;">5</sup>,</span>
-            <span class="author-block">Renliang Sun<sup style="color:#ffac33;">2</sup>,</span>
-            <span class="author-block">Ming Yin<sup style="color:#9b51e0;">7</sup>,</span>
-            <span class="author-block">Boyuan Zheng<sup style="color:#ed4b82;">3</sup>,</span>
-            <span class="author-block">Zhenzhu Yang<sup style="color:#007bff;">4</sup>,</span>
-            <span class="author-block">Yibo Liu<sup style="color:#ed4b82;">6</sup>,</span>
-            <span class="author-block">Wenhao Huang<sup style="color:#007bff;">4</sup>,</span><br> -->
+          
             <span class="author-block">
-              <a href="https://jinlanfu.github.io/" style="text-decoration: none; color: inherit;">Jinlan Fu<sup style="color:#ed4b82;">2</sup></a>
-              ,
-          </span>
-            <span class="author-block">
-              <a href="https://xpqiu.github.io/en.html" style="text-decoration: none; color: inherit;">Xipeng Qiu<sup style="color:#ffac33;">†,1</sup></a>
+              <a href="https://xuanjing-huang.github.io/" style="text-decoration: none; color: inherit;">Xuanjing Huang<sup style="color:#ffac33;">2</sup></a>
               ,
           </span>
           <span class="author-block">
-              <a href="https://xuanjing-huang.github.io/" style="text-decoration: none; color: inherit;">Xuanjing Huang<sup style="color:#ffac33;">1</sup></a>
+              <a href="" style="text-decoration: none; color: inherit;">Jing Shao<sup style="color:#ffac33;">†,1</sup></a>
               ,
           </span>
-          <!-- <span class="author-block">
-              <a href="https://wenhuchen.github.io/" style="text-decoration: none; color: inherit;">Wenhu Chen*<sup style="color:#ffac33;">†,2</sup></a>
-          </span> -->
+         
           </div>
           
           <br>
           
           <div class="is-size-5 publication-authors">
             <!-- <span class="author-block"><sup style="color:#6fbf73;">1</sup>IN.AI Research,</span> -->
-            <span class="author-block"><sup style="color:#ffac33;">1</sup>Fudan University,</span>
-            <span class="author-block"><sup style="color:#ed4b82;">2</sup>National University of Singapore</span>
+            <span class="author-block"><sup style="color:#ffac33;">1</sup>Shanghai Artificial Intelligence Laboratory, </span>
+            <span class="author-block"><sup style="color:#ed4b82;">2</sup>Fudan University, </span>
+            <span class="author-bl                               ock"><sup style="color:#ed4b82;">3</sup>Beihang University</span>
             <!-- <span class="author-block"><sup style="color:#007bff;">4</sup>Independent,</span></br>
             <span class="author-block"><sup style="color:#ffac33;">5</sup>Carnegie Mellon University,</span>
             <span class="author-block"><sup style="color:#ed4b82;">6</sup>University of Victoria,</span>
@@ -152,11 +95,8 @@
 
           <br>
           <div class="is-size-5 publication-authors">
-            <!-- <span class="author-block">*Core Contributors</span><br> -->
+            <span class="author-block">*Equally Contribution</span> <br>
             <span class="author-block">†Corresponding Author</span>
-            <!-- <span class="author-block"><a href="mailto:xiangyue.work@gmail.com">xiangyue.work@gmail.com</a>,</span>
-            <span class="author-block"><a href="mailto:su.809@osu.edu">su.809@osu.edu</a>,</span>
-            <span class="author-block"><a href="mailto:wenhuchen@uwaterloo.ca">wenhuchen@uwaterloo.ca</a></span> -->
           </div>
           
 
@@ -165,25 +105,16 @@
               <!-- PDF Link. -->
               <span class="link-block">
                 <!-- @PAN TODO: change links -->
-                <a href="https://arxiv.org/abs/2406.15279"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://huggingface.co/papers/2406.15279"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <p style="font-size:18px">🤗</p>
-                  </span>
-                  <span>HF Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://huggingface.co/datasets/sinwang/SIUO"
+                <a href="https://huggingface.co/datasets/Foreshhh/vlsbench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <p style="font-size:18px">🤗</p>
@@ -192,7 +123,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/sinwang20/SIUO"
+                <a href="https://github.com/hxhcreate/VLSBench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -203,16 +134,15 @@
               <!-- Dataset Link. -->
               
               <!-- Leaderboard Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="#leaderboard"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon has-text-white">
                     <i class="fa-solid fa-trophy"></i>
-                      <!-- <p style="font-size:18px">🏆</p> -->
                   </span>
                   <span>Leaderboard</span>
                 </a>
-              </span>
+              </span> -->
 
               
               <!-- Visualization Link. -->
@@ -245,7 +175,9 @@
       </div>
     </div>
   </div>
+
 </section>
+
 <style>
   .center {
     display: block;
@@ -257,8 +189,11 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
         <div class="content has-text-centered">
-          <img src="static/images/intro6.jpg" alt="geometric reasoning" width="50%"/>
-          <p> An example of the SIUO (Safe Inputs but Unsafe Output). The input consists of a safe image and text, but their semantic combination is unsafe. Such inputs can easily prompt LVLMs to generate unsafe responses.</p>
+          <img src="static/images/teaser.png" alt="geometric reasoning" width="95%"/>
+          <p> Overview of our work. We have discovered a problem in current multimodal safety data samples, which says visual safety
+            information leakage (VSIL). Based on this leakage, we further find it leads to a counter-intuitive problem, that simpler SFT-based alignment
+            methods can perform nearly the same high safety rate. Thus, we construct VLSBench, preventing visual leakage. This newly proposed task
+            discourages textual alignment and motivates more dedicated multimodal alignment methods to better solve this challenging task. </p>
         </div>
     </div>
   </div>
@@ -269,19 +204,18 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">🔔News</h2>
+        <!-- <h2 class="title is-3">🔔News</h2>
         <div class="content has-text-justified">
           <p>
             <b>🚀[2024-06-12]: Exciting to share our new benchmark about cross-modality safety alignment on <a href="https://github.com/sinwang20/SIUO">Github</a>!🌟</b>
-          </p>
-          <!-- <p>
-            <b>🔥[2023-12-04]: Our evaluation server for the test set is now available on <a href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all submissions and look forward to your participation! 😆</b>
           </p> -->
+        
       </div>      
-        <h2 class="title is-3">Introduction</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            As Artificial General Intelligence (AGI) becomes increasingly integrated into various facets of human life, ensuring the safety and ethical alignment of such systems is paramount. Previous studies primarily focus on single-modality threats, which may not suffice given the integrated and complex nature of cross-modality interactions. We introduce a novel safety alignment challenge called <em>Safe Inputs but Unsafe Output (SIUO)</em> to evaluate cross-modality safety alignment. Specifically, it considers cases where single modalities are safe independently but could potentially lead to unsafe or unethical outputs when combined. To empirically investigate this problem, we developed the SIUO, a cross-modality benchmark encompassing 9 critical safety domains, such as self-harm, illegal activities, and privacy violations. Our findings reveal substantial safety vulnerabilities in both closed- and open-source LVLMs, such as GPT-4V and LLaVA, underscoring the inadequacy of current models to reliably interpret and respond to complex, real-world scenarios.
+            Safety concerns of Multimodal large language models (MLLMs) have gradually become an important problem in various applications. Surprisingly, previous works indicate a counter-intuitive phenomenon that using textual unlearning to align MLLMs achieves comparable safety performances with MLLMs trained with image-text pairs. To explain such a counter-intuitive phenomenon, we discover a <strong>visual safety information leakage (VSIL)</strong>  problem in existing multimodal safety benchmarks, i.e., the potentially risky and sensitive content in the image has been revealed in the textual query. In this way, MLLMs can easily refuse these sensitive text-image queries according to textual queries.
+            However, image-text pairs without VSIL are common in real-world scenarios and are overlooked by existing multimodal safety benchmarks. To this end, we construct <strong>multimodal visual leakless safety benchmark (VLSBench)</strong> preventing visual safety leakage from image to textual query with 2.4k image-text pairs. Experimental results indicate that VLSBench poses a significant challenge to both open-source and close-source MLLMs, including LLaVA, Qwen2-VL, Llama3.2-Vision, and GPT-4o. This study demonstrates that textual alignment is enough for multimodal safety scenarios with VSIL, while multimodal alignment is a more promising solution for multimodal safety scenarios without VSIL.
           </p>
         </div>
       </div>
@@ -294,8 +228,7 @@
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
   <h1 class="title is-1 mmmu">
-    <img src="static/images/siuo_icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>
-    <span class="mmmu" style="vertical-align: middle">SIUO Benchmark</span>
+    <span class="mmmu" style="vertical-align: middle">VLSBench Dataset</span>
   </h1>
   </div>
 </section>
@@ -306,45 +239,30 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
+            <img src="static/images/category_paper.png" alt="dataset_statistics" width="95%"/>
           <p>
-            We introduce the Safe Inputs but Unsafe Output (SIUO) benchmark, a novel benchmark meticulously curated to assess the cross-modality safety alignment capability of LVLMs. Covering safety domains across disciplines, including Self-Harm, Dangerous Behavior, Morality, Illegal Activities & Crime, Controversial Topics & Politics, Discrimination & Stereotyping, Religion Beliefs, Information Misinterpretation and Privacy Violation. 
-            <!-- The detailed subject coverage and statistics are detailed in the figure. The questions in our benchmark were manually collected by a team of college students (including coauthors) from various disciplines and subjects, drawing from online sources, textbooks, and lecture materials. -->
+            To address the existing issues in current multimodal safety benchmarks, called VSIL, we construct
+            Multimodal Visual Leakless Safety Benchmark (VLSBench)
+            filling this blank in the current multimodal safety datasets.
+            As shown above, our dataset compromise 2.4k image-text pairs, convering 6 categories and 19 sub-categories.
           </p>
-          <img src="static/images/example2.jpg" alt="algebraic reasoning" class="center">
-          <br>
-          <p>
-            SIUO is designed to evaluate three essential dimensions in multimodal models: integration, knowledge, and reasoning. Our goal is to assess how effectively these models can integrate information from various modalities, align with human values through substantial knowledge, and apply ethical reasoning to predict outcomes and ensure user safety. This comprehensive evaluation ensures that models can meet the stringent safety standards required in real-world applications.
-          </p>
-          <img src="static/images/dim3.jpg" alt="algebraic reasoning" class="center">
-          <br>
-          <!-- <p>
-            Our MMMU benchmark introduces key challenges to multimodal foundation models, as detailed in a figure. Among these, we particularly highlight the challenge stemming from the requirement for both expert-level visual perceptual abilities and deliberate reasoning with subject-specific knowledge. This challenge is vividly illustrated through our tasks, which not only demand the processing of various heterogeneous image types but also necessitate a model's adeptness in using domain-specific knowledge to deeply understand both the text and images and to reason. This goes significantly beyond basic visual perception, calling for an advanced approach that integrates advanced multimodal analysis with domain-specific knowledge.
-          </p> -->
-
           
-
+          <br>
         </div>
     </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Statistics</h2>
+        <h2 class="title is-3">Construction</h2>
         <div class="content has-text-justified">
-          <p>
-            The SIUO dataset comprises 167 meticulously crafted test cases, with an average word length of 27.2 The SIUO dataset covers nine critical safety domains. To ensure that our examples cover a greater diversity of this safety domain, we also decompose the safety domain into safety subclasses. For example, self-harm is divided into suicide, NSSI, and unhealthy habits. The statistics for the safety domains and safety subclasses are shown in Figure.
-        </p>
-        <!-- <div class="content has-text-centered">
-          <img src="static/images/compare.Jpeg" alt="algebraic reasoning" class="center">
-          <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
-        </div> -->
-        <div class="content has-text-centered">
-          <iframe src="static/images/sunburst_chart.html" width="100%" height="600px" style="border:none;"></iframe>
-          <p> SIUO covers 9 safety domains and 33 subcategories.</p>
-      </div>
-        
-          
-          
+            <img src="static/images/pipeline.png" alt="pipeline" width="95%"/>
+            <p>
+                Our data construction pipeline shown above focuses
+                on effectively preventing visual safety leakage from image modality to textual query. First, we should generate harmful textual queries from two parallel paths shown in <strong> Step 1</strong>. Then, we need to detoxify the harmful queries and obtain
+                the harmless queries shown in <strong>Step 2.</strong>  Furthermore, we use text-to-image models to iteratively generate images shown in
+                <strong>Step 3.</strong>  Finally, we filter out the mismatched and safe image-text pairs and obtain the final datasets as shown in <strong>Step 4.</strong>
+            </p>
         </div>
     </div>
     </div>
@@ -380,48 +298,34 @@
 <!-- RESULTS SECTION -->
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-    <h1 class="title is-1 mmmu">Experiment Results</h1>
+    <h1 class="title is-1 mmmu">Experimental Results</h1>
   </div>
 </section>
 <section class="section">
   <div class="container">
 
-
-
 <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+        <h2 class="title is-3" id="leaderboard">Benchmark Results</h2>
         <div class="content">
           <div class="content has-text-justified">
-            <p>
-              We evaluate various LVLMs, including both closed- and open-source models.
-              Our evaluation is conducted under a zero-shot setting to assess the capability of models to generate accurate answers without fine-tuning or few-shot demonstrations on our benchmark.
-              For all models, we use the default prompt provided by each model for multi-choice or open QA, if available.
-              <!-- If models do not provide prompts for task types in MMMU, we conduct prompt engineering on the validation set and use the most effective prompt for the later zero-shot experiment. -->
-
-            </p>
           </div>
 
-          <!-- <button id="toggleButton" onclick="changeButtonText()"><b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)</button> -->
-          <div class="model-labels-container">
-            <!-- <span class="leaderboard-label" style="background-color: rgba(255, 208, 80, 0.15);">Human Expert</span> -->
+      
+          <!-- <div class="model-labels-container">
+         
             <span class="leaderboard-label" style="background-color: rgba(249, 242, 248, 1);">Open-Source</span>
             <span class="leaderboard-label" style="background-color: rgba(117, 209, 215, 0.1);">Closed-Source</span>
           </div>
-          <!-- Validation Set Leaderboard -->
           <table id="table1" class="js-sort-table">
             <tr>
-              <td class="js-sort-number"><strong>Reset</strong></td>
+              <td class="js-sort-number"><strong>Models</strong></td>
               <td class="js-sort-string"><strong>Size</strong></td>
-              <td class="js-sort-date"><strong>Date</strong></td>
-              <td class="js-sort-number"><strong>Safe</strong></td>
-              <td class="js-sort-number"><strong>Effective</strong></td>
-              <td class="js-sort-number"><strong>Safe & Effective</strong></td>
-              <td class="js-sort-number"><strong>Multi-Choice</strong></td>
-              <!-- <td class="js-sort-number"><strong>Health & Medicine</strong></td>
-              <td class="js-sort-number"><strong>Human. & Social Sci.</strong></td>
-              <td class="js-sort-number"><strong>Tech & Eng.</strong></td> -->
+              <td class="js-sort-number"><strong>Safe with Refuse</strong></td>
+              <td class="js-sort-number"><strong>Safe with Warning</strong></td>
+              <td class="js-sort-number"><strong>Total Safe Rate</strong></td>
+             
             </tr>
             <tr style="background-color: rgba(117, 209, 215, 0.1);">
               <td style="text-align: left;">
@@ -653,271 +557,42 @@
               <td style="color: #808080;">24.95</td>
 
             </tr>
-          </table>
-          <!-- Test Set Leaderboard -->
+          </table> -->
 
-          
-            <p> Overall results of different models on the SIUO. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. Except for multiple-choice questions, all other results are based on manual evaluations.</p>
+        <img src="static/images/leaderbord_paper.png" alt="pipeline" width="95%"/>
+        <p> 
+            We evaluate various MLLMs including open-source models and close-source APIs. We also benchmark several safety aligned baselines. The evaluation is conducted by GPT-4o with a specialized prompt. We classify the response into three type, safe with refusal, safe with warning and unsafe. The safe rate is sum of safe refuse rate and safe warning rate.
+            </p>
         </div>
+
+        
+
       </div>
     </div> 
-<!-------------------------------------------------------------------- Image Type SECTION -------------------------------------------------------------------->
 
-<!-------------------------------------------------------------------- Difficulty Levels SECTION -------------------------------------------------------------------->
-<!-- <div class="columns is-centered m-6">
-  <div class="column is-full has-text-centered content">
-    <h2 class="title is-3">Different Domains Analysis</h2>
-    <div class="content has-text-justified">
-      <p>
-        we compares the performance of selected models across three difficulty levels.
-        GPT-4V demonstrates a significantly higher proficiency, with a success rate of 76.1%, compared to opensource models in the “Easy” category.
-        When it comes to the “Medium” category, while the gap narrows, GPT-4V still leads at 55.6%.
-        The further diminishing performance gap in the “Hard” category across models indicates that as the complexity of tasks increases, the advantage of more advanced models like GPT-4V almost disappears.
-        This might reflect a current limitation in handling expert-level challenging queries even for the most advanced models.
-      </p>
-    </div>
-    <div class="content has-text-centered">
-      <canvas id="difficulty_level_chart"></canvas>
-      <p>Result decomposition across question difficulty levels.</p>
-    </div>
-  </div>
-</div> -->
-<!-------------------------------------------------------------------- Single VS Multiple image SECTION -------------------------------------------------------------------->
-
-<!-------------------------------------------------------------------- Error Analysis SECTION -------------------------------------------------------------------->
-    <!-- <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Error Analysis</h2>
-        <div class="content has-text-justified">
-          <p>
-            We delve into the analysis of errors by GPT-4V, a pivotal aspect for understanding its operational capabilities and limitations.
-            This analysis serves not only to identify the model's current shortcomings but also to guide future enhancements in its design and training.
-            We meticulously examine 150 randomly sampled error instances from GPT-4V's predictions.
-            These instances are analyzed by expert annotators who identify the root causes of mispredictions based on their knowledge and the golden explanations if available.
-            The distribution of these errors is illustrated in Figure, and a selection of 100 notable cases, along with detailed analyses, is included in the Appendix.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <img src="static/images/error_distribution_1.Jpeg" alt="error distribution" width="25%">
-          <p> Error distribution over 150 annotated GPT-4V errors.</p>
-        </div>
-      </div>
-    </div> -->
-
-<!-------------------------------------------------------------------- Error Example  -------------------------------------------------------------------->
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3" id="examples">Error Examples</h2>
+        <h2 class="title is-3" id="examples">VLSBench Examples</h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/error/case1-1.jpg" alt="grade-lv" width="60%"/>
+              <img src="static/images/example_1.png" alt="grade-lv" width="60%"/>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/error/case2-1.jpg" alt="grade-lv" width="60%"/>
+              <img src="static/images/example_2.png" alt="grade-lv" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/example_3.png" alt="grade-lv" width="80%"/>
             </div>
           </div>
         </div>
       </div>
     </div>
-<!-------------------------------------------------------------------- Correct Example -------------------------------------------------------------------->
-
-    <!-- <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Correct Examples</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/1.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/2.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/3.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/4.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/5.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/6.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/7.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/8.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/9.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/10.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/11.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/12.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/14.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/15.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/16.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/17.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/18.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/19.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/20.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/21.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/22.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/23.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/24.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/25.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/26.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/27.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/28.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/29.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/30.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/31.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/32.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/33.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/34.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/35.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/36.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/37.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/correct/38.png" alt="grade-lv" width="60%"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-<!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
 
 
   </div>
@@ -929,16 +604,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
     <pre><code>
-      @article{wang2024cross,
-        title={Cross-Modality Safety Alignment},
-        author={Siyin Wang and Xingsong Ye and Qinyuan Cheng and Junwen Duan and Shimin Li and Jinlan Fu and Xipeng Qiu and Xuanjing Huang},
-        journal={arXiv preprint arXiv:2406.15279},
-        year={2024},
-        url={https://arxiv.org/abs/2406.15279},
-        archivePrefix={arXiv},
-        eprint={2406.15279},
-        primaryClass={cs.AI},
-      }
+      
 </code></pre>
   </div>
 </section>
