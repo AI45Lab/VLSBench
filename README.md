@@ -1,4 +1,4 @@
-<h2>VLSBench: Unveiling Information Leakage in Multimodal Safety</h2>
+<h1>VLSBench: Unveiling Information Leakage in Multimodal Safety</h1>
 
 
 <span style="color:red">📢 <strong><i>We are currently organizing the code for VLSBench. If you are interested in our work, please star ⭐ our project.</i></strong></span>
