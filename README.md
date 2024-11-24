@@ -18,7 +18,7 @@
 <h2 id="SALAD-Bench">🎉 Introduction</h2>
 
 <div align="center">
-<img src="./assets/teaser.png" width="500" alt="Intro_img">
+<img src="./assets/teaser.png" width="1000" alt="Intro_img">
 </div>
 
 Safety concerns of Multimodal large language models (MLLMs) have gradually become an important problem in various applications. Surprisingly, previous works indicate a counter-intuitive phenomenon that using textual unlearning to align MLLMs achieves comparable safety performances with MLLMs trained with image-text pairs. To explain such a counter-intuitive phenomenon, we discover a **visual safety information leakage (VSIL)** problem in existing multimodal safety benchmarks, i.e., the potentially risky and sensitive content in the image has been revealed in the textual query. In this way, MLLMs can easily refuse these sensitive text-image queries according to textual queries.
