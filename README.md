@@ -27,7 +27,7 @@ However, image-text pairs without VSIL are common in real-world scenarios and ar
 
 <h2 id="dataset">⚙️ Dataset</h2>
 
-You can download our (dataset)[https://huggingface.co/datasets/Foreshhh/vlsbench] from Huggingface, also, json file can be quickly accessed [here](./data/data.json)
+You can download our [dataset](https://huggingface.co/datasets/Foreshhh/vlsbench) from Huggingface, also, json file can be quickly accessed [here](./data/data.json)
 
 <div align="center">
 <img src="./static/images/category_paper.png" width="900" alt="Intro_img">
@@ -51,7 +51,7 @@ Our code support several archs
 - mllama: for Llama3.2-Vision
 
 
-First, download the (dataset)[https://huggingface.co/datasets/Foreshhh/vlsbench] in huggingface and specify the downloaded dir as the `ROOT_DIR`.
+First, download the [dataset](https://huggingface.co/datasets/Foreshhh/vlsbench) in huggingface and specify the downloaded dir as the `ROOT_DIR`.
 
 Then, execute the following script:
 
