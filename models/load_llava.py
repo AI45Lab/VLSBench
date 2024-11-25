@@ -33,6 +33,7 @@ def load_image(image_file):
     return image
 
 # load_model
+print(f"[INFO] Load llava from origin!")
 model_path = "/mnt/hwfile/trustai/huxuhao/models/llava-v1.5-7b"
 model_name = get_model_name_from_path(model_path)
 tokenizer, model, image_processor, context_len = load_pretrained_model(

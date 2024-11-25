@@ -16,7 +16,7 @@ import base64
 import re
 
 
-from utils  import *
+from utils  import evaluate_vlsbench_function
 from models.load_llava import *
 
 arch_to_module = {
@@ -352,154 +352,48 @@ class BaseTask():
         return out  
         
 
-class VCSBaseTask(BaseTask):
-    def __init__(self, task, args):
-        self.task = task
-        super().__init__(args)
-        
-        self.output_list = []
-        
-        self.output_dir = f"./results_dir/vcsb"
-        os.makedirs(self.output_dir, exist_ok=True)
-        
-        self.question_key = "instruction"
-        self.image_key = "image_path"
-        file_path = '/mnt/petrelfs/huxuhao/work/mm_alignment/steering_mllm/my_bench/our_bench/all_final_2.json'
-        self.data = self.load_data(file_path)
-        
-        file_name = file_path.split("/")[-1].split(".")[0]
-        self.output_path = os.path.join(self.output_dir, f"{self.model_name}_{file_name}_output.json")
-    def load_data(self, data_path):
-        df = pd.read_json(data_path, orient='records', lines=False)
-        data = df.to_dict(orient='records')
-        return data
-    
-    def run_with_api(self):
-        start_time = time.time()
-        self.inference_answer_with_api()
-        end_time = time.time()
-        elapsed_minutes = np.round((end_time - start_time) / 60, 2)
-        print(f"[INFO]CLose MODEL INFERENCE Takes time: {elapsed_minutes}min")  
-        
-        print(f"##############RESULTS on {self.task}:")     
-        self.evaluate_answer()
-    
-    def inference_answer_with_api(self):
-        existed_output_path = find_files_with_name(self.output_dir, self.output_path.split("/")[-1])
-        if existed_output_path:
-            print(f"[INFO]Output file already exists: {self.output_path}")
-            self.output_list = json.load(open(existed_output_path, 'r'))['logs']
-            return
-        
-        question_list = [item[self.question_key] for item in self.data]
-        image_list =[item[self.image_key] for item in self.data]
-
-        data_messages = []
-        for ques, image_path in zip(question_list, image_list):
-            base64_image = encode_image(image_path)
-            image_format = guess_image_type_from_base64(base64_image)
-            if self.args.identify:
-                msg = [
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {
-                        "role": "user",
-                        "content": [
-                            {       
-                                "type": "image_url", "image_url": {
-                                "url": f"data:{image_format};base64,{base64_image}",
-                                },
-                            },
-                            {"type": "text", "text": ques.strip()},
-                        ],
-                    }
-                ]
-            else:
-                msg = [
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {
-                        "role": "user",
-                        "content": [
-                            {       
-                                "type": "image_url", "image_url": {
-                                "url": f"data:{image_format};base64,{base64_image}",
-                                },
-                            },
-                            {"type": "text", "text": ques.strip()},
-                        ],
-                    }
-                ]
-            data_messages.append(msg)
-            
-        gen_kwargs = {
-            "max_tokens": 64,
-            "temperature": 0.0,
-            "top_p": 1.0,
-        }
-        api_key = "sk-WkjxshSdkwMD2B6VLErO2AQLX6Mi8DTY0CjbUchu8PiF6XLz"
-        api_base = "https://api.claudeshop.top/v1"
-        outputs = openai_gen_message(data_messages, model_name=self.model_name, api_key=api_key, api_base=api_base, **gen_kwargs)
-        
-        self.output_list = []
-        for pred, ques, image_path in zip(outputs, question_list, image_list):
-            self.output_list.append({
-                "question": ques,
-                "image": image_path,
-                "pred_answer": pred.strip(),
-            })
-    
-    
-    def inference_answer(self):
-        existed_output_path = find_files_with_name(self.output_dir, self.output_path.split("/")[-1])
-        if existed_output_path:
-            print(f"[INFO]Output file already exists: {self.output_path}")
-            self.output_list = json.load(open(existed_output_path, 'r'))['logs']
-            return
-        
-        question_list = [item['instruction'] for item in self.data]
-        image_list =[item['image_path'] for item in self.data]
-
-        if self.args.mask_multimodal:   # 允许图片benchmark，mask进行输入
-            self.output_list = self.get_inference_results(question_list)
-        else:
-            self.output_list = self.get_inference_results(question_list, image_list)    
-    
-    def evaluate_answer(self): 
-        # evaluation_function = evaluate_vcsb_function
-        evaluation_function =  evaluate_llamaguardvision_function
-        eval_output_json = evaluation_function(self.output_list)  
-       
-        safe_label_list = [o['label'] for o in eval_output_json]
-        safe_rate = (safe_label_list.count(1) + safe_label_list.count(2)) / len(safe_label_list)
-        safe_refuse_rate = safe_label_list.count(1) / len(safe_label_list)
-        safe_warning_rate = safe_label_list.count(2) / len(safe_label_list)
-        print(f"Safe Rate: {np.round(safe_rate * 100, 2)}")
-        
-        result_list = [{"question": item['question'], "image": item['image'], "pred_answer": item['pred_answer'], "safe_label": eval_json['label'], 'label_str': eval_json['label_str']} for item, eval_json in zip(self.output_list, eval_output_json)]
-        result_list = [{'id': i, **d} for i, d in enumerate(result_list)]
-        json.dump({
-            "stats": {
-                "safe_rate": np.round(safe_rate * 100, 2),
-                "safe_refuse_rate": np.round(safe_refuse_rate * 100, 2),
-                "safe_warning_rate": np.round(safe_warning_rate * 100, 2),
-            },
-            "logs": result_list
-        }, open(self.output_path, 'w'),  ensure_ascii=False)  
 
 
 def eval_main(data, data_root, model_inference, output_path):
     
     # inference output
-    output_list = []
+    start_time = time.time()
+    inference_output = []
     for id, item in tqdm(enumerate(data)):
         question = item['instruction']
         image_path = item['image_path']
         output = model_inference(question, image_path).strip()
-        output_list.append({
+        inference_output.append({
             "question": question,
             "image_path": image_path,
             "response": output
         })
+    end_time = time.time()
+    elapsed_minutes = np.round((end_time - start_time) / 60, 2)
+    print(f"[INFO]Inference time: {elapsed_minutes}min") 
+        
+        
     # evaluation with gpt
+    evaluation_output = evaluate_vlsbench_function(inference_output)
+    safe_label_list = [o['label'] for o in evaluation_output]
+    safe_rate = (safe_label_list.count(1) + safe_label_list.count(2)) / len(safe_label_list)
+    safe_refuse_rate = safe_label_list.count(1) / len(safe_label_list)
+    safe_warning_rate = safe_label_list.count(2) / len(safe_label_list)
+    
+    print(f"[INFO]Safe Refusal Rate: {np.round(safe_refuse_rate * 100, 2)}\nSafe Warning Rate: {np.round(safe_warning_rate * 100, 2)}\nSafe Rate: {np.round(safe_rate * 100, 2)}")
+    
+    result_list = [{"question": item['question'], "image": item['image'], "pred_answer": item['pred_answer'], "safe_label": eval_json['label'], 'label_str': eval_json['label_str']} for item, eval_json in zip(inference_output, evaluation_output)]
+    result_list = [{'id': i, **d} for i, d in enumerate(result_list)]
+    json.dump({
+        "stats": {
+            "safe_rate": np.round(safe_rate * 100, 2),
+            "safe_refuse_rate": np.round(safe_refuse_rate * 100, 2),
+            "safe_warning_rate": np.round(safe_warning_rate * 100, 2),
+        },
+        "logs": result_list
+    }, open(output_path, 'w'),  ensure_ascii=False) 
+    
+    
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
