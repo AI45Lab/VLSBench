@@ -17,10 +17,6 @@ api_key = ""
 api_base = ""
 
 if model_name == 'local':
-    if "http_proxy" in os.environ:
-        del os.environ["http_proxy"]
-    if 'HTTP_PROXY' in os.environ:
-        del os.environ["HTTP_PROXY"]
     client = OpenAI(api_key=api_key, base_url=api_base)
     model_name = client.models.list().data[0].id      
 else: 
@@ -28,8 +24,6 @@ else:
     if not api_key and not api_base:    # not set, then default
         api_key = os.environ.get("OPENAI_API_KEY")
         api_base = f"https://api.openai.com/v1"
-        os.environ['http_proxy'] = "http://10.1.20.57:23128"
-        os.environ['https_proxy'] = "http://10.1.20.57:23128"
     client = OpenAI(api_key=api_key, base_url=api_base)
 print(model_name)
 

@@ -11,7 +11,7 @@ default_generation_config = {
 
 # load model
 print(f"[INFO] Load MllamaForConditionalGeneration")
-model_path = "/mnt/hwfile/trustai/huxuhao/models/Llama-3.2-11B-Vision-Instruct"
+model_path = "meta-llama/Llama-3.2-11B-Vision-Instruct"
 model = MllamaForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.bfloat16, device_map='auto').to("cuda")
 processor = AutoProcessor.from_pretrained(model_path)
 

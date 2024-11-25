@@ -50,6 +50,7 @@ Our code support several archs
 - qwen2vl: for Qwen2-VL
 - mllama: for Llama3.2-Vision
 
+If you are using openai apis, please remember to specify the model_name and your customized api_key and api_base in [load_openai.py](./models/load_openai.py)
 
 First, download the [dataset](https://huggingface.co/datasets/Foreshhh/vlsbench) in huggingface and specify the downloaded dir as the `ROOT_DIR`.
 

@@ -59,8 +59,6 @@ class VLSBENCHOUTPUT(BaseModel):
 def get_openai_structered_eval_answer(
     data_messages, model_name, response_class=VLSBENCHOUTPUT
 ):
-    os.environ["http_proxy"] = "http://10.1.20.57:23128"
-    os.environ["https_proxy"] = "http://10.1.20.57:23128"
     api_base = f"https://api.openai.com/v1"
     api_key = os.environ.get("OPENAI_API_KEY")
     client = OpenAI(api_key=api_key, base_url=api_base)

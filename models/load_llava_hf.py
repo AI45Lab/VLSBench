@@ -18,7 +18,7 @@ default_generation_config = {
 
 # load_model
 print(f"[INFO] Load llavaforcontionalgeneration")
-model_path = "/mnt/hwfile/trustai/huxuhao/models/llava-1.5-7b-hf"
+model_path = "llava_hf/llava-1.5-7b-hf"
 model = LlavaForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True, device_map='cuda')
 processor = LlavaProcessor.from_pretrained(model_path)
 

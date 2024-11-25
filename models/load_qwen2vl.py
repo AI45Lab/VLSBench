@@ -11,7 +11,7 @@ default_generation_config = {
 
 # load model
 print(f"[INFO] Load qwenvl2forconditionalgeneration")
-model_path = "/mnt/hwfile/trustai/huxuhao/models/Qwen2-VL-7B-Instruct"
+model_path = "Qwen/Qwen2-VL-7B-Instruct"
 model = Qwen2VLForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.bfloat16).to("cuda")
 processor = AutoProcessor.from_pretrained(model_path)
 

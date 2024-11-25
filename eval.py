@@ -72,7 +72,7 @@ def eval_main(data, data_root, model_inference, output_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--arch", type=str, default="llava")   # if you specify the openai model, you need to specify the api name in load_openai.py
-    parser.add_argument("--data_root", type=str, default='/mnt/hwfile/trustai/huxuhao/vlsbench')
+    parser.add_argument("--data_root", type=str, default='~/vlsbench')
     parser.add_argument("--output_dir", type=str, default='./outputs')
     args = parser.parse_args()
     
