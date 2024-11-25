@@ -1,23 +1,13 @@
 import os
-import json
 from tqdm import tqdm
-import math
-import pandas as pd
-import numpy as np
 from openai import OpenAI
-import openai
 import time
-import requests
 from typing import List
-import shutil
 from collections import OrderedDict
 from pydantic import BaseModel
 from typing import Dict, List, Optional, Literal
 import base64
-import re
-import random
-from PIL import Image 
-from io import BytesIO
+
 
 default_generation_config = {
     "do_sample": False, 
@@ -55,20 +45,6 @@ def find_files_with_name(directory, file_name):
     return False
 
 
-def load_images(self, image_paths: List[str]):
-    def load_image(image_file):
-        if image_file.startswith("http") or image_file.startswith("https"):
-            response = requests.get(image_file)
-            image = Image.open(BytesIO(response.content)).convert("RGB")
-        else:
-            image = Image.open(image_file).convert("RGB")
-        return image
-    out = []
-    for image_path in image_paths:
-        image = load_image(image_path)
-        out.append(image)
-    return out  
-
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
@@ -105,7 +81,6 @@ def get_openai_structered_eval_answer(
             print(f"####Evaluation Output####\n{output_json}")
         else:
             raise ValueError("Invalid input type")
-        print(f"####Evaluation Model Output####\n{output_json}")
     outputs_json = [output.dict() for output in outputs_json]
     return outputs_json
 

@@ -1,10 +1,9 @@
 from transformers import LlavaNextForConditionalGeneration, LlavaNextProcessor
 import torch
-from typing import List, str
+from typing import List
 
 
-from ..utils import load_images
-
+from .utils import load_images
 
 
 default_generation_config = {
@@ -18,9 +17,8 @@ default_generation_config = {
 # load_model
 print(f"[INFO] Load llavanextforcontionalgeneration")
 model_path = "/mnt/hwfile/trustai/huxuhao/models/llama3-llava-next-8b-hf"
-mdoel = LlavaNextForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True, device_map='cuda')
+model = LlavaNextForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True, device_map='cuda')
 processor = LlavaNextProcessor.from_pretrained(model_path)
-
 
 
 # model inference

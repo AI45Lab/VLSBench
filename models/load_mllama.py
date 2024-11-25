@@ -1,6 +1,6 @@
 import torch  
 from transformers import MllamaForConditionalGeneration, AutoProcessor
-from ..utils import load_images
+from .utils import load_images
 
 default_generation_config = {
     "do_sample": False, 

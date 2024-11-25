@@ -3,7 +3,11 @@ import os
 from  tqdm import tqdm
 from typing import List
 import time
-from ..utils import encode_image, guess_image_type_from_base64
+
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from eval_utils import encode_image, guess_image_type_from_base64
+
 
 CLOSE_API_NAME = ['gpt4', 'gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo','o1-mini', 'o1-preview', 'gemini-1.5-flash', 'gemini-1.5-pro']
 
@@ -38,7 +42,8 @@ gen_kwargs = {
 CALL_RETRY = 3
 CALL_SLEEP = 2
 
-def api_call(client: OpenAI, question, image_path):
+
+def model_inference(question, image_path) -> str:
     base64_image = encode_image(image_path)
     image_format = guess_image_type_from_base64(base64_image)
     messages = [
@@ -57,27 +62,21 @@ def api_call(client: OpenAI, question, image_path):
         ],
         }
     ]
+    output = ''
     for _ in range(CALL_RETRY):
         try:
             completion = client.chat.completions.create(
                 model=model_name, messages=messages, **gen_kwargs
             )
             output = completion.choices[0].message.content
-            print(output)
-            break
+            if not output:  # refuse output
+                output = completion.choices[0].message.refusal
+            return output
         except Exception as e:
             print(f"GPT_CALL Error: {model_name}:{e}")
             time.sleep(CALL_SLEEP)
             output = 'Sorry, but error occured'
             continue
     return output
-
-
-def model_inference(question, image_path) -> str:
-    output = api_call(client, question, image_path)
-    print(f"####Model Output####\n{output}")
-    return output
-
-
 
 

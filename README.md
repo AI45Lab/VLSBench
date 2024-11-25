@@ -41,8 +41,22 @@ You can check some examples here
 
 <h2 id="quick-start">🚀 Usage</h2>
 
-```python
+Our code support several archs
 
+- openai: api based model with openai format
+- llava: the origin llava implementation
+- llava_hf: the hugginface implementation of llava
+- llava_next: the hugginface implementation of llava 1.6 and above
+- qwen2vl: for Qwen2-VL
+- mllama: for Llama3.2-Vision
+
+
+First, download the (dataset)[https://huggingface.co/datasets/Foreshhh/vlsbench] in huggingface and specify the downloaded dir as the `ROOT_DIR`.
+
+Then, execute the following script:
+
+```bash
+python eval.py --arch llava --data_root $ROOT_DIR --output_dir ./outputs
 ```
 
 <h2 id="citation">📑 Citation</h2>
