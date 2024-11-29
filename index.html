@@ -172,7 +172,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
         <div class="content has-text-centered">
-          <img src="static/images/teaser.png" alt="geometric reasoning" width="95%"/>
+          <img src="static/images/teaser.png" alt="geometric reasoning" width="110%" class='center' />
           <p> Overview of our work. We have discovered a problem in current multimodal safety data samples, which says visual safety
             information leakage (VSIL). Based on this leakage, we further find it leads to a counter-intuitive problem, that simpler SFT-based alignment
             methods can perform nearly the same high safety rate. Thus, we construct VLSBench, preventing visual leakage. This newly proposed task
@@ -229,7 +229,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Shortcut Alignment </h2>
         <div class="content has-text-justified">
-            <img src="static/images/alignment_table.png" alt="dataset_statistics" width="95%"/>
+            <img src="static/images/alignment_table.png" alt="dataset_statistics" width="95%" class='center'/>
           <p>
             The VSIL problem leads the shortcut alignment methods: textual alignment to the multimodal safety challenge.
           </p>
@@ -261,7 +261,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
-            <img src="static/images/category_paper.png" alt="dataset_statistics" width="95%"/>
+            <img src="static/images/category_paper.png" alt="dataset_statistics" width="95%" class="center"/>
           <p>
             To address the existing issues in current multimodal safety benchmarks, called VSIL, we construct
             Multimodal Visual Leakless Safety Benchmark (VLSBench)
@@ -278,7 +278,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Construction</h2>
         <div class="content has-text-justified">
-            <img src="static/images/pipeline.png" alt="pipeline" width="95%"/>
+            <img src="static/images/pipeline.png" alt="pipeline" width="95%" class="center" />
             <p>
                 Our data construction pipeline shown above focuses
                 on effectively preventing visual safety leakage from image modality to textual query. First, we should generate harmful textual queries from two parallel paths shown in <strong> Step 1</strong>. Then, we need to detoxify the harmful queries and obtain
@@ -293,7 +293,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Samples Preview</h2>
         <div class="content has-text-justified">
-            <img src="static/images/examples.png" alt="pipeline" width="95%"/>
+            <img src="static/images/examples.png" alt="pipeline" width="95%" class="center" />
             <p>
                We present six examples each paired with a corresponding response in our VSLBench. The left and middle four images are generated and the right two images are from existing data sources.
             </p>
@@ -312,29 +312,31 @@
 
 <section class="section">
   <div class="container">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered ">
       <div class="column is-four-fifths">
         <h2 class="title is-3" id="leaderboard">Benchmark Results</h2>
-          <div class="content has-text-justified">
-            <img src="static/images/leaderbord_paper.png" alt="pipeline" width="60%"/>
+          <div class="content has-text-justified is-centered">
+            <img src="static/images/leaderbord_paper.png" alt="pipeline" width="55%" class="center" />
               <p> 
                 We evaluate various MLLMs including open-source models and close-source APIs. We also benchmark several safety aligned baselines. The evaluation is conducted by GPT-4o with a specialized prompt. We classify the response into three type, safe with refusal, safe with warning and unsafe. The safe rate is sum of safe refuse rate and safe warning rate.
             </p>
+           <br>
+            <img src="static/images/results_figure.png" alt="pipeline"  class="center" />
+            <p> 
+                The above two figures highlight our VLSBench's several features: (1) the <strong>challenging nature</strong>  of our dataset; (2) highlight the importance of <strong>multimodal alignment</strong> methods rather than textual shortcut alignment.
+              </p>
         </div>
       </div>
     </div>
 
-    <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+    <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
           <h2 class="title is-3" id="leaderboard">Results</h2>
           <div class="content has-text-justified">
-            <img src="static/images/results_figure.png" alt="pipeline" width="95%"/>
-            <p> 
-                The above two figures highlight our VLSBench's several features: (1) the <strong>challenging nature</strong>  of our dataset; (2) highlight the importance of <strong>multimodal alignment</strong> methods rather than textual shortcut alignment.
-              </p>
+           
             </div>
           </div>
-    </div>
+    </div> -->
      
         
 
