@@ -300,32 +300,6 @@
         </div>
     </div>
     </div>
-
-    <!-- <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Statistics</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/mmmu_subject_distribution.Jpeg" alt="algebraic reasoning" width="95%"/>
-              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/statistics.png" alt="arithmetic reasoning" width="40%"/>
-              <p> Key statistics of the MMMU benchmark</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/image_type_count.png" alt="arithmetic reasoning" width="80%"/>
-              <p> Distribution of image types in the MMMU dataset</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
 
@@ -335,37 +309,34 @@
     <h1 class="title is-1 mmmu">Experimental Results</h1>
   </div>
 </section>
+
 <section class="section">
   <div class="container">
-    <div class="columns is-centered ">
-      <div class="column is-full has-text-centered content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         <h2 class="title is-3" id="leaderboard">Benchmark Results</h2>
-        <div class="content">
           <div class="content has-text-justified">
-          </div>
-         
-        <img src="static/images/leaderbord_paper.png" alt="pipeline" width="60%"/>
-        <p> 
-            We evaluate various MLLMs including open-source models and close-source APIs. We also benchmark several safety aligned baselines. The evaluation is conducted by GPT-4o with a specialized prompt. We classify the response into three type, safe with refusal, safe with warning and unsafe. The safe rate is sum of safe refuse rate and safe warning rate.
+            <img src="static/images/leaderbord_paper.png" alt="pipeline" width="60%"/>
+              <p> 
+                We evaluate various MLLMs including open-source models and close-source APIs. We also benchmark several safety aligned baselines. The evaluation is conducted by GPT-4o with a specialized prompt. We classify the response into three type, safe with refusal, safe with warning and unsafe. The safe rate is sum of safe refuse rate and safe warning rate.
             </p>
         </div>
       </div>
+    </div>
 
-      <div class="column is-full has-text-centered content">
-        <h2 class="title is-3" id="leaderboard">Results</h2>
-        <div class="content">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="leaderboard">Results</h2>
           <div class="content has-text-justified">
+            <img src="static/images/results_figure.png" alt="pipeline" width="95%"/>
+            <p> 
+                The above two figures highlight our VLSBench's several features: (1) the <strong>challenging nature</strong>  of our dataset; (2) highlight the importance of <strong>multimodal alignment</strong> methods rather than textual shortcut alignment.
+              </p>
+            </div>
           </div>
-         
-        <img src="static/images/results_figure.png" alt="pipeline" width="95%"/>
-        <p> 
-            The above two figures highlight our VLSBench's several features: (1) the <strong>challenging nature</strong>  of our dataset; (2) highlight the importance of <strong>multimodal alignment</strong> methods rather than textual shortcut alignment.
-        </div>
-      </div>
-
-    </div> 
-
-
+    </div>
+     
+        
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
