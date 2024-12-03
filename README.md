@@ -63,14 +63,11 @@ python eval.py --arch llava --data_root $ROOT_DIR --output_dir ./outputs
 <h2 id="citation">📑 Citation</h2>
 
 ```bibtex
-@misc{hu2024vlsbenchunveilingvisualleakage,
+@article{hu2024vlsbench,
       title={VLSBench: Unveiling Visual Leakage in Multimodal Safety}, 
       author={Xuhao Hu and Dongrui Liu and Hao Li and Xuanjing Huang and Jing Shao},
-      year={2024},
-      eprint={2411.19939},
-      archivePrefix={arXiv},
-      primaryClass={cs.CR},
-      url={https://arxiv.org/abs/2411.19939}, 
+      journal={arXiv preprint arXiv:2411.19939},
+      year={2024}
 }
 ```
 
