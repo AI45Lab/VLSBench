@@ -43,16 +43,16 @@ You can check some examples here
 
 Our code support several archs
 
-- openai: api based model with openai format
+- openai: api based model with openai format: If you are using openai apis, please remember to specify the model_name and your customized api_key and api_base in [load_openai.py](./models/load_openai.py)
 - llava: the origin llava implementation
 - llava_hf: the hugginface implementation of llava
 - llava_next: the hugginface implementation of llava 1.6 and above
 - qwen2vl: for Qwen2-VL
 - mllama: for Llama3.2-Vision
 
-If you are using openai apis, please remember to specify the model_name and your customized api_key and api_base in [load_openai.py](./models/load_openai.py)
-
 First, download the [dataset](https://huggingface.co/datasets/Foreshhh/vlsbench) in huggingface and specify the downloaded dir as the `ROOT_DIR`.
+
+And specify the evaluation api key used in [here](https://github.com/hxhcreate/VLSBench/blob/main/eval_utils.py#L59).
 
 Then, execute the following script:
 
