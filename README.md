@@ -12,6 +12,8 @@
 
 <h2 id="updates">🔥 Updates</h2>
 
+📆[2024-12-16] 🎈 We release the model checkpoints we used in paper: [Qwen2-VL-VLGuard](https://huggingface.co/Foreshhh/Qwen2-VL-7B-VLGuard) [Qwen2-VL-SafeRLHF](https://huggingface.co/Foreshhh/Qwen2-VL-7B-VLGuard) 🎈
+
 📆[2024-11-26] 🎈 Our paper, code and dataset are released! 🎈
 
 
