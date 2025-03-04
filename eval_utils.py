@@ -156,6 +156,6 @@ def evaluate_vlsbench_function(
         ]
         eval_message_input.append(message)
         
-    model_name = "gpt-4o"
+    model_name = "gpt-4o"  # optional for `gpt-4o-mini` to reduce the refusal rate by OpenAI policy
     outputs_list = get_openai_structered_eval_answer(eval_message_input, model_name)
     return outputs_list
