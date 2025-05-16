@@ -12,6 +12,8 @@
 
 <h2 id="updates">🔥 Updates</h2>
 
+📆[2025-05-16] 🎈 Our paper has beed accepeted to ACL2025 Main Conference, see you in Vienna 🎈
+
 📆[2025-03-10] 🎈 Update `data.json` in [HF](https://huggingface.co/datasets/Foreshhh/vlsbench) with `safety reason` and `image description` for more efficient and reliable evaluaiton.
 
 📆[2024-12-16] 🎈 Thanks to @paperweekly to share our work: [Chinese Blog](https://mp.weixin.qq.com/s/OZ_H4bWi6ZYk2K_S-620QA) 🎈
