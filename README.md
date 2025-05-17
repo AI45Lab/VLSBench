@@ -33,10 +33,10 @@ Safety concerns of Multimodal large language models (MLLMs) have gradually becom
 However, image-text pairs without VSIL are common in real-world scenarios and are overlooked by existing multimodal safety benchmarks. To this end, we construct multimodal **visual leakless safety benchmark (VLSBench)** preventing visual safety leakage from image to textual query with 2.4k image-text pairs. Experimental results indicate that VLSBench poses a significant challenge to both open-source and close-source MLLMs, including LLaVA, Qwen2-VL, Llama3.2-Vision, and GPT-4o. This study demonstrates that textual alignment is enough for multimodal safety scenarios with VSIL, while multimodal alignment is a more promising solution for multimodal safety scenarios without VSIL.
 
 
-<h2 id="SALAD-Bench">🎉 Problem of VSIL </h2>
+<h2 id="SALAD-Bench">📍 Problem of VSIL </h2>
 
 <div align="center">
-<img src="./static/images/vsil_problem.png" width="900" alt="Intro_img">
+<img src="./static/images/alignment_table.png" width="900" alt="Intro_img">
 </div>
 
 The VSIL problem leads the shortcut alignment methods: textual alignment to the multimodal safety challenge.
