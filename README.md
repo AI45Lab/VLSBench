@@ -4,7 +4,7 @@
 <span style="color:red">📢 <strong><i>We are currently organizing the code for VLSBench. If you are interested in our work, please star ⭐ our project.</i></strong></span>
 
 
-<a href='https://arxiv.org/abs/2411.19939'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://hxhcreate.github.io/vlsbench.github.io/'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/datasets/Foreshhh/vlsbench'><img src='https://img.shields.io/badge/🤗-Dataset-blue'></a>
+<a href='https://arxiv.org/abs/2411.19939'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://ai45lab.github.io/VLSBench'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/datasets/Foreshhh/vlsbench'><img src='https://img.shields.io/badge/🤗-Dataset-blue'></a>
 </a>
  
 
