@@ -4,7 +4,7 @@
 <span style="color:red">📢 <strong><i>We are currently organizing the code for VLSBench. If you are interested in our work, please star ⭐ our project.</i></strong></span>
 
 
-<a href='https://arxiv.org/abs/2411.19939'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://ai45lab.github.io/VLSBench'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/datasets/Foreshhh/vlsbench'><img src='https://img.shields.io/badge/🤗-Dataset-blue'></a>
+<a href='https://arxiv.org/abs/2411.19939'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://ai45lab.github.io/VLSBench'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/collections/Foreshhh/vlsbench-687e701d892f2cbfa6d10a93'><img src='https://img.shields.io/badge/🤗-Dataset-blue'></a>
 </a>
  
 
@@ -14,7 +14,7 @@
 
 📆[2025-05-16] 🎈 Our paper has beed accepeted to ACL2025 Main Conference, see you in Vienna 🎈
 
-📆[2025-03-10] 🎈 Update `data.json` in [HF](https://huggingface.co/datasets/Foreshhh/vlsbench) with `safety reason` and `image description` for more efficient and reliable evaluaiton.
+📆[2025-03-10] 🎈 Update `data.json` in [HF](https://huggingface.co/datasets/Foreshhh/vlsbench) with `safety reason` and `image description` for more efficient and reliable evaluation.
 
 📆[2024-12-16] 🎈 Thanks to @paperweekly to share our work: [Chinese Blog](https://mp.weixin.qq.com/s/OZ_H4bWi6ZYk2K_S-620QA) 🎈
 
